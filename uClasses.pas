@@ -4,7 +4,7 @@ interface
 
   //Abstração
   //Encapsulamento
-  type TPersonagem = class (TObject)
+  type TPersonagem = class
     Nome:String;
     Vida:Integer;
     Genero:String;

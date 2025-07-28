@@ -9,6 +9,7 @@ uses
 type
   TForm1 = class(TForm)
     Button1: TButton;
+    MeuEdit: TEdit;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -27,10 +28,9 @@ uses uClasses;
 
 procedure TForm1.Button1Click(Sender: TObject);
 var personagem:TPersonagem;
-    player:TPlayer;
 begin
   personagem:=TPersonagem.Create(10,5);
-  personagem.Nome:='Teste';
+  personagem.Nome:=MeuEdit.Text;
 end;
 
 end.

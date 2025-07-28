@@ -22,4 +22,12 @@ object Form1: TForm1
     TabOrder = 0
     OnClick = Button1Click
   end
+  object MeuEdit: TEdit
+    Left = 178
+    Top = 48
+    Width = 121
+    Height = 21
+    TabOrder = 1
+    Text = 'MeuEdit'
+  end
 end
