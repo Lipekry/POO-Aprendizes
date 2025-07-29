@@ -55,24 +55,24 @@ end;
 
 function TBoss.getDano: Integer;
 begin
-
+  Result:=Self.Dano;
 end;
 
 procedure TBoss.setDano(ADano: Integer);
 begin
-
+  Self.Dano:=ADano;
 end;
 
 { TPlayer }
 
 function TPlayer.getDano: Integer;
 begin
-
+  Result:=Self.Dano;
 end;
 
 procedure TPlayer.setDano(ADano: Integer);
 begin
-
+  Self.Dano:=ADano;
 end;
 
 end.
