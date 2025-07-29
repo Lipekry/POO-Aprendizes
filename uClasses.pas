@@ -2,8 +2,6 @@ unit uClasses;
 
 interface
 
-  //Abstração
-  //Encapsulamento
   type TPersonagem = class
   private
     Nome:String;
@@ -13,22 +11,22 @@ interface
     Dano:Integer;
     Defesa:Integer;
   public
-    //Getter & Setter
     function getDano:Integer;
     procedure setDano(ADano:Integer);
-    function getGenero:String;
-    procedure setGenero(aGenero:String);
     constructor Create(aDano,aDefesa:Integer);
   end;
 
-  //Herança
   type TPlayer = class (TPersonagem)
     NickName:String;
     Experiencia:Double;
+    function getDano:Integer;
+    procedure setDano(ADano:Integer);
   end;
 
   type TBoss = class (TPersonagem)
-
+    HabilidadeEspecial:String;
+    function getDano:Integer;
+    procedure setDano(ADano:Integer);
   end;
 
 implementation
@@ -45,25 +43,36 @@ end;
 
 function TPersonagem.getDano: Integer;
 begin
-  Result:=Self.Dano+Self.Nivel;
-end;
-
-function TPersonagem.getGenero: String;
-begin
-  Result:=Self.Genero;
-end;
-
-procedure TPersonagem.setGenero(aGenero: String);
-begin
-  Self.Genero:=aGenero;
+  Result:=Self.Dano;
 end;
 
 procedure TPersonagem.setDano(ADano: Integer);
 begin
-  if ADano<1 then begin
-    raise Exception.Create('O Dano tem que ser maior que zero. TPersonagem.setDano');
-  end;
   Self.Dano:=ADano;
+end;
+
+{ TBoss }
+
+function TBoss.getDano: Integer;
+begin
+
+end;
+
+procedure TBoss.setDano(ADano: Integer);
+begin
+
+end;
+
+{ TPlayer }
+
+function TPlayer.getDano: Integer;
+begin
+
+end;
+
+procedure TPlayer.setDano(ADano: Integer);
+begin
+
 end;
 
 end.

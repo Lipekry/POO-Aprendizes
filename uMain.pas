@@ -24,13 +24,26 @@ implementation
 
 {$R *.dfm}
 
-uses uClasses;
+uses uClasses, System.Generics.Collections;
 
 procedure TForm1.Button1Click(Sender: TObject);
 var personagem:TPersonagem;
+    player:TPlayer;
+    boss:TBoss;
+    ListaPersonagens:TObjectList<TPersonagem>;
 begin
-  personagem:=TPersonagem.Create(0,0);
-  personagem.setDano(0);
+  ListaPersonagens:=TObjectList<TPersonagem>.Create;
+  ListaPersonagens.Add(TBoss.Create(1,1));
+  ListaPersonagens.Add(TBoss.Create(1,1));
+  ListaPersonagens.Add(TBoss.Create(1,1));
+  ListaPersonagens.Add(TPlayer.Create(1,1));
+  ListaPersonagens.Add(TPlayer.Create(1,1));
+  ListaPersonagens.Add(TPlayer.Create(1,1));
+
+  for personagem in ListaPersonagens do begin
+    personagem.getDano;
+  end;
+
 end;
 
 end.
