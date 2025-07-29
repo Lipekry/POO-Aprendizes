@@ -29,8 +29,8 @@ uses uClasses;
 procedure TForm1.Button1Click(Sender: TObject);
 var personagem:TPersonagem;
 begin
-  personagem:=TPersonagem.Create(10,5);
-  personagem.Nome:=MeuEdit.Text;
+  personagem:=TPersonagem.Create(0,0);
+  personagem.setDano(0);
 end;
 
 end.
