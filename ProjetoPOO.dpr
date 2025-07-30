@@ -3,7 +3,9 @@ program ProjetoPOO;
 uses
   Vcl.Forms,
   uMain in 'uMain.pas' {Form1},
-  uClasses in 'uClasses.pas';
+  uPersonagem in 'uPersonagem.pas',
+  uPlayer in 'uPlayer.pas',
+  uBoss in 'uBoss.pas';
 
 {$R *.res}
 

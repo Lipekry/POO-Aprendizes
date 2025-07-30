@@ -4,15 +4,17 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, uPersonagem, uPlayer, uBoss, System.Generics.Collections;
 
 type
   TForm1 = class(TForm)
     Button1: TButton;
     MeuEdit: TEdit;
-    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
     { Private declarations }
+    wListaPersonagens:TObjectList<TPersonagem>;
   public
     { Public declarations }
   end;
@@ -24,26 +26,14 @@ implementation
 
 {$R *.dfm}
 
-uses uClasses, System.Generics.Collections;
-
-procedure TForm1.Button1Click(Sender: TObject);
-var personagem:TPersonagem;
-    player:TPlayer;
-    boss:TBoss;
-    ListaPersonagens:TObjectList<TPersonagem>;
+procedure TForm1.FormCreate(Sender: TObject);
 begin
-  ListaPersonagens:=TObjectList<TPersonagem>.Create;
-  ListaPersonagens.Add(TBoss.Create(1,1));
-  ListaPersonagens.Add(TBoss.Create(1,1));
-  ListaPersonagens.Add(TBoss.Create(1,1));
-  ListaPersonagens.Add(TPlayer.Create(1,1));
-  ListaPersonagens.Add(TPlayer.Create(1,1));
-  ListaPersonagens.Add(TPlayer.Create(1,1));
+  wListaPersonagens:=TObjectList<TPersonagem>.Create;
+end;
 
-  for personagem in ListaPersonagens do begin
-    personagem.getDano;
-  end;
-
+procedure TForm1.FormDestroy(Sender: TObject);
+begin
+  wListaPersonagens.Free;
 end;
 
 end.
