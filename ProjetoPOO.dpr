@@ -5,7 +5,8 @@ uses
   uMain in 'uMain.pas' {Form1},
   uPersonagem in 'uPersonagem.pas',
   uPlayer in 'uPlayer.pas',
-  uBoss in 'uBoss.pas';
+  uBoss in 'uBoss.pas',
+  uNPC in 'uNPC.pas';
 
 {$R *.res}
 

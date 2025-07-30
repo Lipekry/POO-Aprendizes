@@ -106,6 +106,7 @@
         <DCCReference Include="uPersonagem.pas"/>
         <DCCReference Include="uPlayer.pas"/>
         <DCCReference Include="uBoss.pas"/>
+        <DCCReference Include="uNPC.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
